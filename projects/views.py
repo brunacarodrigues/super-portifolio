@@ -1,8 +1,10 @@
 from rest_framework import viewsets
-from .models import Profile, Project
-from .serializers import ProfileSerializer, ProjectSerializer
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from django.shortcuts import render
+from .models import Profile, Project
+from .models import Certificate, CertifyingInstitution
+from .serializers import ProfileSerializer, ProjectSerializer
+from .serializers import CertificateSerializer, CertifyingInstitutionSerializer
 
 
 class ProfileViewSet(viewsets.ModelViewSet):
@@ -18,12 +20,10 @@ class ProfileViewSet(viewsets.ModelViewSet):
         instance = self.get_object()
 
         if request.method == 'GET':
-            # Crie um contexto com os dados do perfil para passar ao template
             context = {
                 'profile': instance,
             }
 
-            # Renderize o template HTML com os detalhes do perfil
             return render(
                 request,
                 'profile_detail.html',
@@ -36,3 +36,16 @@ class ProfileViewSet(viewsets.ModelViewSet):
 class ProjectViewSet(viewsets.ModelViewSet):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
+    permission_classes = [IsAuthenticated]
+
+
+class CertificateViewSet(viewsets.ModelViewSet):
+    queryset = Certificate.objects.all()
+    serializer_class = CertificateSerializer
+    permission_classes = [IsAuthenticated]
+
+
+class CertifyingInstitutionViewSet(viewsets.ModelViewSet):
+    queryset = CertifyingInstitution.objects.all()
+    serializer_class = CertifyingInstitutionSerializer
+    permission_classes = [IsAuthenticated]

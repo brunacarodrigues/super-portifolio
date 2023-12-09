@@ -10,5 +10,9 @@
         <p>{{ project.name }}</p>
         <p>{{ project.keyword }}</p>
         <p>{{ project.key_skill }}</p>
+        {% for certificate in profile.certificates.all %}
+            <p>{{ certificate.name }}</p>
+            <p>{{ certificate.certifying_institution }}</p>
+        {% endfor %}
     {% endfor %}
 {% endblock %}
