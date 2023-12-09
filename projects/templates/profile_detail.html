@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+    <h1>Profiles Details</h1>
+    <p>{{ profile.name }}</p>
+    <p>{{ profile.bio }}</p>
+    {% for project in profile.projects.all %}
+        <p>{{ project.name }}</p>
+        <p>{{ project.keyword }}</p>
+        <p>{{ project.key_skill }}</p>
+    {% endfor %}
+{% endblock %}
