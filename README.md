@@ -1,10 +1,2 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+Projeto do módulo Eletiva Python.
+Implementação de autenticação utilizando Simple JWT, a criação de operações CRUD (Create, Read, Update, Delete) para os modelos Profile e Project, a customização de ViewSets para o modelo Profile, a criação de operações CRUD inline para os modelos Certificate e CertifyingInstitution, e a exibição de uma página de perfil completa. Foram aplicados autenticação e autorização em Django, manipulação de modelos e views, configuração de URLs, e criação de templates HTML para renderização das páginas.
